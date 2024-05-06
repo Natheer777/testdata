@@ -80,9 +80,9 @@ class UserController {
                 res.send(result)
             
             }
-    static async addUser(name_ar , details_ar, name_en, details_en) {
+    static async addUser(name , details, more) {
         try {
-            const result = await UserModel.addNewUser(name_ar , details_ar, name_en, details_en);
+            const result = await UserModel.addNewUser(name , details, more);
             return result;
         } catch (error) {
             throw new Error("فشلت عملية إضافة المستخدم إلى قاعدة البيانات.");

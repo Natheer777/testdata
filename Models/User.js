@@ -62,18 +62,18 @@ const pool = require("../Config/Dbnode");
 class UserModel {
   static async getUser() {
       return new Promise (resolve => {
-        pool.query("select * from dec" ,[],(error, result) => {
+        pool.query("select * from users" ,[],(error, result) => {
           if (!error)
           resolve(result);
         });
       }
     )
 }
-    static async addNewUser(name_ar , details_ar, name_en, details_en) {
+    static async addNewUser(name , details, more, detailsE) {
         return new Promise((resolve, reject) => {
             pool.query(
-                "INSERT INTO dec (name_ar , details_ar, name_en, details_en) VALUES (?, ?, ? ,?)",
-                [name_ar , details_ar, name_en, details_en],
+                "INSERT INTO users (name , details, more) VALUES (?, ?, ?)",
+                [name , details, more],
                 (error, result) => {
                     if (error) {
                         console.error("Error adding info to database:", error);

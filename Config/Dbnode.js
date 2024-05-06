@@ -1,10 +1,10 @@
 const  mysql =require('mysql')
 const db= mysql.createPool({
-    host: 'byizv8c6igtt4tglu5qy-mysql.services.clever-cloud.com',
+    host: 'beoy2tydjht5tw7paovl-mysql.services.clever-cloud.com',
     port:'3306',
-    user: 'u8fgkmjr89kmcgno',
-    password: 'U5ZmhGHJBmKHTgSCM4lo',
-    database: 'byizv8c6igtt4tglu5qy'
+    user: 'uyugzedpltjeofpl',
+    password: 'd8FnSH2SCppUsZIITwo8',
+    database: 'beoy2tydjht5tw7paovl'
 });
 
  db.getConnection(()=>{
