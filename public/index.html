@@ -30,9 +30,9 @@
          }
  
          input[type="text"],
-         input[type="name_ar"],
-         input[type="name_en"], 
-         input[type="details_ar"],
+         input[type="name"],
+         input[type="more"], 
+         input[type="details"],
          input[type="details_en"] {
              width: 100%;
              padding: 10px;
@@ -62,14 +62,14 @@
      <form action="/adduser" method="POST">
 
  
-         <label for="name_ar">الكلمة العربية</label>
-         <input type="name_ar" id="name_ar" name="name_ar" required><br><br>
+         <label for="name">الكلمة العربية</label>
+         <input type="name" id="name" name="name" required><br><br>
  
-         <label for="details_ar">اضافة المعنى</label>
-         <input type="details_ar" id="details_ar" name="details_ar" required><br><br>
+         <label for="details">اضافة المعنى</label>
+         <input type="details" id="details" name="details" required><br><br>
  
-         <label for="name_en">الكلمة الاجنبية</label>
-         <input type="name_en" id="name_en" name="name_en" required><br><br>
+         <label for="more">الكلمة الاجنبية</label>
+         <input type="more" id="more" name="more" required><br><br>
  
        
          <button type="submit">اضافة المحتوى</button>
