@@ -1,8 +1,8 @@
 const express = require("express");
 const bodyParser = require("body-parser");
-const pool = require("./Config/Dbnode");
-const UserController = require("./Controllers/Usecontroller");
-const route = require("./Routers/Route");
+const pool = require("../server/Config/Dbnode");
+const UserController = require("../server/Controllers/Usecontroller");
+const route = require("../server/Routers/Route");
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -16,10 +16,10 @@ app.get("/input", (req, res) => {
   res.sendFile(__dirname + "/public/index.html");
 });
 app.post("/adduser", async (req, res) => {
-  const { name, details, more } = req.body;
+  const {name , details, more} = req.body;
 
   try {
-    const result = await UserController.addUser(name, details, more);
+    const result = await UserController.addUser(name , details, more);
     res.send("تمت إضافة المستخدم بنجاح!");
   } catch (error) {
     console.error("فشلت عملية إضافة المستخدم:", error);

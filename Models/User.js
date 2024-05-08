@@ -69,7 +69,7 @@ class UserModel {
       }
     )
 }
-    static async addNewUser(name , details, more, detailsE) {
+    static async addNewUser(name , details, more) {
         return new Promise((resolve, reject) => {
             pool.query(
                 "INSERT INTO users (name , details, more) VALUES (?, ?, ?)",
