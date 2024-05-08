@@ -48,19 +48,24 @@ app.use(route)
 // Serve static files from the 'public' directory
 app.use(express.static(path.join(__dirname, 'public')));
 
-// Route to serve the 'adduser.html' file
-app.get("/input", (req, res) => {
-  res.sendFile(path.join(__dirname, "/public/adduser.html"));
-});
+// Define a single route handler to serve HTML files based on route parameter
+app.get("/:page", (req, res) => {
+  const { page } = req.params;
 
-// Route to serve the 'delete.html' file
-app.get("/delete", (req, res) => {
-  res.sendFile(path.join(__dirname, "/public/delete.html"));
-});
+  // Define allowed pages and corresponding HTML files
+  const allowedPages = {
+    "input": "adduser.html",
+    "delete": "delete.html",
+    "edite": "edite.html"
+  };
 
-// Route to serve the 'edite.html' file
-app.get("/edite", (req, res) => {
-  res.sendFile(path.join(__dirname, "/public/edite.html"));
+  // Check if the requested page is allowed
+  if (page in allowedPages) {
+    const htmlFilePath = path.join(__dirname, "public", allowedPages[page]);
+    res.sendFile(htmlFilePath);
+  } else {
+    res.status(404).send('Page not found');
+  }
 });
 
 // Handle form submission for adding a new user
