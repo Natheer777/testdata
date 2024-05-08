@@ -34,39 +34,42 @@
 //   console.log(`Server is running on port ${PORT}`);
 // });
 
-
 const express = require('express');
 const bodyParser = require('body-parser');
+const path = require('path'); // Node.js path module for file paths
+
 const route = require('../server/Routers/Route'); // Import your route file
 
 const app = express();
 const PORT = process.env.PORT || 3000;
 
+// Middleware to parse JSON bodies
 app.use(bodyParser.json());
+// Middleware to parse URL-encoded bodies
 app.use(bodyParser.urlencoded({ extended: true }));
 
-app.use(route); // Mount your routes under /api
+// Mount your routes under /api
+app.use(route);
 
+// Serving static files (e.g., HTML, CSS, JS) from a public directory
+app.use(express.static(path.join(__dirname, 'public')));
+
+// Route to serve the adduser.html file
 app.get("/input", (req, res) => {
-  res.sendFile(__dirname + "/public/adduser.html");
-
+  res.sendFile(path.join(__dirname, "/public/adduser.html"));
 });
 
-
-
+// Route to serve the delete.html file
 app.get("/delete", (req, res) => {
-  res.sendFile(__dirname + "/public/delete.html");
-
+  res.sendFile(path.join(__dirname, "/public/delete.html"));
 });
 
-
-
-
+// Route to serve the edite.html file
 app.get("/edite", (req, res) => {
-  res.sendFile(__dirname + "/public/edite.html");
- 
+  res.sendFile(path.join(__dirname, "/public/edite.html"));
 });
 
+// Start the server
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
 });
