@@ -4,13 +4,9 @@
     "concurrently": "^8.2.2",
     "cors-anywhere": "^0.4.4",
     "dotenv": "^16.4.5",
+    "ejs": "^3.1.10",
     "express": "^4.19.2",
+    "multer": "^1.4.5-lts.1",
     "mysql": "^2.18.1"
-  },
-  "scripts": {
-    "start:server1": "node index.js",
-    "start:server2": "node edite.js",
-    "start:server3": "node delete.js",
-    "start:both": "concurrently \"npm run start:server1\" \"npm run start:server2\" \"npm run start:server3\""
   }
 }
