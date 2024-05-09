@@ -73,13 +73,13 @@ app.get("/adduser", (req, res) => {
   res.sendFile(path.join(__dirname, "public", "/adduser.html"));
 });
 
-app.get("/delete", (req, res) => {
-  res.sendFile(path.join(__dirname, "public", "/delete.html"));
-});
+// app.get("/delete", (req, res) => {
+//   res.sendFile(path.join(__dirname, "public", "/delete.html"));
+// });
 
-app.get("/edite", (req, res) => {
-  res.sendFile(path.join(__dirname, "public", "/edite.html"));
-});
+// app.get("/edite", (req, res) => {
+//   res.sendFile(path.join(__dirname, "public", "/edite.html"));
+// });
 
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
