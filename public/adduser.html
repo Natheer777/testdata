@@ -32,7 +32,8 @@
          input[type="text"],
          input[type="name"],
          input[type="details"],
-         input[type="more"] {
+         input[type="more"],
+         input[type="id"] {
              width: 100%;
              padding: 10px;
              margin-bottom: 15px;
@@ -73,16 +74,39 @@
         
          <button type="submit">اضافة المحتوى</button>
      </form>
-     
+     <h1>delete user</h1>
+     <form action="/delete" method="post">
+
+ 
+        <label for="id">id</label>
+        <input type="id" id="id" name="id" required><br><br>
+       
+        <button type="submit">delete</button>
+    </form>
+    <h1>edite User</h1>
+    <form action="/edite" method="POST">
+
+
+        <label for="id">id</label>
+        <input type="id" id="id" name="id" required><br><br>
+
+
+        <label for="name">الكلمة العربية</label>
+        <input type="name" id="name" name="name" required><br><br>
+
+        <label for="details">اضافة المعنى</label>
+        <input type="details" id="details" name="details" required><br><br>
+
+        <label for="more">الكلمة الاجنبية</label>
+        <input type="more" id="more" name="more" required><br><br>
+
+       
+        <button type="submit">اضافة المحتوى</button>
+    </form>
      <a href="https://testdata-1.onrender.com/allusers" target="_blank">
          <button>رؤية البيانات</button>
         </a>
-        <a href="/edite">
-           <button>تعديل البيانات</button>
-        </a>
-        <a href="/delete">
-           <button>حذف البيانات</button>
-        </a>
+   
  
 </body>
 </html> 
